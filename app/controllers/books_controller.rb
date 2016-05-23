@@ -20,6 +20,7 @@ class BooksController < ApplicationController
   end
 
   def edit
+    authorize! :manage, @book
   end
 
   def create
@@ -37,6 +38,7 @@ class BooksController < ApplicationController
   end
 
   def update
+      authorize! :manage, @book
     respond_to do |format|
       if @book.update(book_params)
         format.html { redirect_to @book, notice: 'Book was successfully updated.' }
@@ -49,6 +51,7 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    authorize! :manage, @book
     @book.destroy
     respond_with(@book)
   end
