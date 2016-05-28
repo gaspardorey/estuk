@@ -38,7 +38,7 @@ class BooksController < ApplicationController
   end
 
   def update
-      authorize! :manage, @book
+    authorize! :manage, @book
     respond_to do |format|
       if @book.update(book_params)
         format.html { redirect_to @book, notice: 'Book was successfully updated.' }

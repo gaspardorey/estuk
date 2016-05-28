@@ -54,3 +54,4 @@ gem 'friendly_id'
 
 gem 'stripe'
 
+gem 'aws-sdk', '< 2.0'
