@@ -13,7 +13,7 @@ class TransactionsController < ApplicationController
 		if sale.finished?
 			redirect_to pickup_url(guid: @sale.guid), notice: "Transaction Successful"
 		else 
-			redirect_to book_path(book), notice: "Something went wrong" #@error
+			redirect_to book_path(book), notice: "Something went wrong"
 		end
 
 	end
